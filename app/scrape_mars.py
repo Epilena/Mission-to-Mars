@@ -109,6 +109,4 @@ composite_data = {
 
 browser.quit()
 
-return composite_data
-
-
+# %%
