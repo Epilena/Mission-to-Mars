@@ -4,9 +4,7 @@
         <meta charset ="UTF-8" />
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
         <meta http-equiv ="X-UA-Compatible" content ="ie=edge" />
-        <link
-        rel ="stylesheet"
-        href ="https://maxcdn.bootstrapcdn.com/bootstap/3.3.7/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <title>Mission to Mars</title>
     </head>
 
@@ -23,7 +21,7 @@
                         <div class="text-box">
                           <h2>Latest Mars News</h2>
                           <h3>{{ mars.title }}</h3>
-                          <p>{{ mars.para }}</p>
+                          <p>{{ mars.paragraph }}</p>
                         </div>
                     </div>
                 </div>
@@ -42,7 +40,7 @@
                 <div class="col-md-4">
                     <div class="row">
                       <h4>Mars Facts</h4>
-                      {{ mars.Mars_df | safe }}
+                      {{ mars.facts | safe }}
                     </div>
                 </div>
             </div>
@@ -54,7 +52,7 @@
                 {% for hemisphere in mars.hemisphere_images %}
                 <div class="col-md-3">
                     <div class="thumbnail">
-                        <img src="{{hemi_images | default('static/images/error.png', true)}}">
+                        <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}">
                         <div class="caption">
                         <h3>{{hemisphere.title}}</h3>
                         </div>
